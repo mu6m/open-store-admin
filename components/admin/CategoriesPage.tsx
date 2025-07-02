@@ -601,7 +601,7 @@ const CategoriesPage: React.FC<CategoriesPageProps> = ({
               onClick={confirmDeleteCategory}
               disabled={
                 isLoading ||
-                (selectedCategory && selectedCategory.productCount > 0)
+                (selectedCategory !== null && selectedCategory.productCount > 0)
               }
               className="bg-red-600 hover:bg-red-700"
             >

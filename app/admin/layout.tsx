@@ -26,7 +26,7 @@ const Button = ({
   children,
   onClick,
   ...props
-}) => (
+}: any) => (
   <button
     className={`inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background ${
       variant === "ghost"
@@ -41,7 +41,7 @@ const Button = ({
 );
 
 // Mock Badge component
-const Badge = ({ variant = "default", className = "", children }) => (
+const Badge = ({ variant = "default", className = "", children }: any) => (
   <span
     className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
       variant === "destructive"
@@ -53,7 +53,7 @@ const Badge = ({ variant = "default", className = "", children }) => (
   </span>
 );
 
-const AdminDashboardLayout = ({ children }) => {
+const AdminDashboardLayout = ({ children }: any) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [currentPath, setCurrentPath] = useState("");
 

@@ -82,7 +82,7 @@ export async function getOrdersData(
     const totalPages = Math.ceil(totalCount / pageSize);
 
     // Get orders with relations
-    const ordersData = await db
+    const ordersData: any = await db
       .select({
         id: orders.id,
         userId: orders.userId,

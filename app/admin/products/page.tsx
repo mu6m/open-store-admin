@@ -10,11 +10,12 @@ interface SearchParams {
 export default async function AdminProductsPage({
   searchParams,
 }: {
-  searchParams: SearchParams;
+  searchParams: Promise<SearchParams>;
 }) {
-  const page = parseInt(searchParams.page || "1");
-  const search = searchParams.search;
-  const categoryId = searchParams.category;
+  const params = await searchParams;
+  const page = parseInt(params.page || "1");
+  const search = params.search;
+  const categoryId = params.category;
 
   const [productsData, categories] = await Promise.all([
     getProductsData(page, 10, search, categoryId),
